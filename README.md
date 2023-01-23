@@ -16,3 +16,22 @@ UsbSerial wiki available. Read it first
 [**Debugging over Wifi**](https://github.com/felHR85/UsbSerial/wiki/9.-Debugging-over-Wifi)\
 [**UsbSerial video tutorials**](https://github.com/felHR85/UsbSerial/wiki/10.-UsbSerial-video-tutorials)
 
+Open the device and set it up as desired
+```java
+serial.open();
+serial.setBaudRate(115200);
+serial.setDataBits(UsbSerialInterface.DATA_BITS_8);
+serial.setParity(UsbSerialInterface.PARITY_ODD);
+serial.setFlowControl(UsbSerialInterface.FLOW_CONTROL_OFF); 
+```
+
+If flow control is needed (currently only supported in CP201x and FTDI devices)
+```java
+/**
+Values:
+    UsbSerialInterface.FLOW_CONTROL_OFF
+    UsbSerialInterface.FLOW_CONTROL_RTS_CTS 
+    UsbSerialInterface.FLOW_CONTROL_DSR_DTR
+**/
+serial.setFlowControl(UsbSerialInterface.FLOW_CONTROL_RTS_CTS);
+```
