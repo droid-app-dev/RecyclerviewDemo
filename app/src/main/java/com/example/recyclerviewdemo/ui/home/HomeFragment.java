@@ -12,6 +12,7 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.recyclerviewdemo.MainActivity;
 import com.example.recyclerviewdemo.R;
 import com.example.recyclerviewdemo.adapter.ContactsAdapter;
 import com.example.recyclerviewdemo.data.Contacts;
@@ -38,7 +39,7 @@ public class HomeFragment extends Fragment {
 //        ContactsAdapter adapter=new ContactsAdapter();
 
         binding.recyclerview.setLayoutManager(new LinearLayoutManager(getActivity()));
-        binding.recyclerview.setAdapter(new ContactsAdapter(getdata()));
+        binding.recyclerview.setAdapter(new ContactsAdapter(getdata(),getActivity()));
 
         return root;
     }
